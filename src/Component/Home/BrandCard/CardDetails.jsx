@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 
 const CardDetails = () => {
@@ -6,11 +5,21 @@ const CardDetails = () => {
   console.log(loadCardDetails);
   const { id } = useParams();
 
-  const { brand, name, description, price, rating, image, type } =
+  const { _id, brand, name, description, price, rating, image, type } =
     loadCardDetails || {};
-  console.log(id);
-  // const findDetails = loadCardDetails.find(details => details._id === id);
-  // console.log(findDetails);
+  console.log(loadCardDetails);
+  const handleAddToCard = _id => {
+    fetch('http://localhost:5000/cards', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(loadCardDetails),
+    })
+      .then(res => res.json())
+      .then(data => console.log(data));
+  };
+
   return (
     <div className="w-11/12 mx-auto">
       <h3 className="text-3xl font-semibold text-center font-serif">
@@ -38,7 +47,10 @@ const CardDetails = () => {
             <span className="font-semibold">Product Price: </span>
             {price}
           </h3>
-          <button className="btn btn-primary w-2/3 mx-auto my-3">
+          <button
+            onClick={handleAddToCard}
+            className="btn btn-primary w-2/3 mx-auto my-3"
+          >
             Add to Cart
           </button>
         </div>
