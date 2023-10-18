@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateProduct = () => {
   const product = useLoaderData();
@@ -28,7 +29,7 @@ const UpdateProduct = () => {
       image,
     };
     console.log(updateProduct);
-    fetch(`http://localhost:5000/products/${_id}`, {
+    fetch(`http://localhost:5000/products/sProduct/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -38,6 +39,14 @@ const UpdateProduct = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Product Update successfully',
+            showConfirmButton: true,
+          });
+          e.target.reset();
+        }
       });
   };
   return (
@@ -141,7 +150,7 @@ const UpdateProduct = () => {
           <input
             className="btn btn-primary w-1/5 mx-auto"
             type="submit"
-            value="Add New Product"
+            value="Product Updated"
           />
         </div>
       </form>
