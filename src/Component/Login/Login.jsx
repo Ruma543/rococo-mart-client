@@ -20,7 +20,7 @@ const Login = () => {
         console.log(result.user);
         const user = { email };
         console.log(user);
-        fetch('http://localhost:5000/cards', {
+        fetch('https://rococo-mart-server.vercel.app/cards', {
           method: 'PATCH',
           headers: {
             'content-type': 'application/json',

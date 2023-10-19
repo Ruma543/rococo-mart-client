@@ -14,7 +14,7 @@ const AddProduct = () => {
     const image = form.get('image');
     const newProduct = { brand, type, name, description, price, rating, image };
     console.log(newProduct);
-    fetch('http://localhost:5000/products', {
+    fetch('https://rococo-mart-server.vercel.app/products', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

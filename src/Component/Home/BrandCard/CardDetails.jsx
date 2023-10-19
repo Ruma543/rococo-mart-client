@@ -33,7 +33,7 @@ const CardDetails = () => {
 
     newCard.user = userObject;
     console.log(newCard);
-    fetch('http://localhost:5000/cards', {
+    fetch('https://rococo-mart-server.vercel.app/cards', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -29,7 +29,7 @@ const UpdateProduct = () => {
       image,
     };
     console.log(updateProduct);
-    fetch(`http://localhost:5000/products/sProduct/${_id}`, {
+    fetch(`https://rococo-mart-server.vercel.app/products/sProduct/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

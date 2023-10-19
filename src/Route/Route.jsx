@@ -20,7 +20,7 @@ const Route = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/brands'),
+        loader: () => fetch('https://rococo-mart-server.vercel.app/brands'),
       },
       {
         path: '/login',
@@ -45,7 +45,7 @@ const Route = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:5000/cards`),
+        loader: () => fetch(`https://rococo-mart-server.vercel.app/cards`),
       },
 
       {
@@ -56,19 +56,33 @@ const Route = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.brand}`),
+          fetch(
+            `https://rococo-mart-server.vercel.app/products/${params.brand}`
+          ),
       },
       {
         path: '/cardDetails/:id',
-        element: <CardDetails></CardDetails>,
+        element: (
+          <PrivateRoute>
+            <CardDetails></CardDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/sProduct/${params.id}`),
+          fetch(
+            `https://rococo-mart-server.vercel.app/products/sProduct/${params.id}`
+          ),
       },
       {
         path: '/updateProduct/:id',
-        element: <UpdateProduct></UpdateProduct>,
+        element: (
+          <PrivateRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/sProduct/${params.id}`),
+          fetch(
+            `https://rococo-mart-server.vercel.app/products/sProduct/${params.id}`
+          ),
       },
     ],
   },

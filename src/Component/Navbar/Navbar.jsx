@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
-import logo from '../../assets/rococo.png';
+import logo from '../../assets/small.png';
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
@@ -61,7 +61,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className=" bg-orange-100">
+    <div className="  bg-orange-100  w-full ">
       <div className=" navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -88,8 +88,11 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-2xl">
-            <img className="w-20 my-3 " src={logo} alt="" />
+          <a className=" normal-case text-2xl flex justify-center items-center gap-3">
+            <img className="w-16 h-16  " src={logo} alt="" />
+            <h3>
+              <span className="text-blue-700">ROCOCO</span> Mart
+            </h3>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">

@@ -6,10 +6,20 @@ const Banner = () => {
     backgroundSize: 'cover',
     height: '80vh',
   };
-  // https://i.ibb.co/VVPrMxc/freestocks-3-Q3ts-J01nc-unsplash.jpg
+
   return (
     <div className="banner w-11/12 mx-auto" style={bannerStyle}>
-      <h3>banner</h3>
+      <div className="space-y-3 lg:h-[80vh] flex flex-col justify-center items-center">
+        <h2 className="text-3xl font-semibold font-serif text-center">
+          Sale up to 80% off
+        </h2>
+        <h3 className="font-semibold font-serif text-center text-gray-600">
+          The best Fashionable product
+        </h3>
+        <button className="px-4 py-3 text-lg bg-blue-500 text-white hover:bg-green-700">
+          Shop Now
+        </button>
+      </div>
     </div>
   );
 };

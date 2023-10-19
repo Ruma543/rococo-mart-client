@@ -1,9 +1,21 @@
 import React from 'react';
+import errorImg from '../../assets/404-error.jpg';
+import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
   return (
-    <div>
-      <h3>oops!!!!</h3>
+    <div className="flex flex-col justify-center space-y-4 my-10 w-2/5 mx-auto">
+      <img src={errorImg} alt="" />
+      <h2 className="text-2xl font-semibold text-center">
+        Oops! Something went wrong. Please try again later.
+      </h2>
+      <div className="w-1/4 mx-auto">
+        <Link to="/">
+          <button className="px-4 py-3 text-lg bg-blue-500 text-white hover:bg-green-700">
+            Go Home
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
