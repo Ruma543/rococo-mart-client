@@ -9,6 +9,7 @@ import MyCart from '../Component/MyCart/MyCart';
 import BrandCardDetails from '../Component/Home/BrandCard/BrandCardDetails';
 import CardDetails from '../Component/Home/BrandCard/CardDetails';
 import UpdateProduct from '../Component/UpdateProduct/UpdateProduct';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 const Route = createBrowserRouter([
   {
@@ -31,20 +32,29 @@ const Route = createBrowserRouter([
       },
       {
         path: '/addProduct',
-        element: <AddProduct></AddProduct>,
+        element: (
+          <PrivateRoute>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/myCart',
-        element: <MyCart></MyCart>,
+        element: (
+          <PrivateRoute>
+            <MyCart></MyCart>
+          </PrivateRoute>
+        ),
         loader: () => fetch(`http://localhost:5000/cards`),
       },
-      // {
-      //   path: '/myCart',
-      //   element: <MyCart></MyCart>,
-      // },
+
       {
         path: '/details/:brand',
-        element: <BrandCardDetails></BrandCardDetails>,
+        element: (
+          <PrivateRoute>
+            <BrandCardDetails></BrandCardDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/products/${params.brand}`),
       },

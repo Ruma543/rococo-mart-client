@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
-import logo from '../../assets/logo1.png';
+import logo from '../../assets/rococo.png';
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
@@ -89,7 +89,7 @@ const Navbar = () => {
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-2xl">
-            <img className=" " src={logo} alt="" />
+            <img className="w-20 my-3 " src={logo} alt="" />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">

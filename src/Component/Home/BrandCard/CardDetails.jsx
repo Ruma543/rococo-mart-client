@@ -13,11 +13,24 @@ const CardDetails = () => {
   const { _id, brand, name, description, price, rating, image, type } =
     loadCardDetails || {};
   // console.log(loadCardDetails);
-  const newCard = loadCardDetails || {};
+  // const newCard = loadCardDetails || {};
 
-  const handleAddToCard = _id => {
-    const { brand, name, description, price, rating, image, type } = newCard;
+  const handleAddToCard = newCard => {
+    const { _id, brand, name, description, price, rating, image, type } =
+      newCard;
     const userObject = { email: user.email };
+    const product = {
+      email: user.email,
+      productId: _id,
+      brand,
+      name,
+      description,
+      price,
+      rating,
+      image,
+      type,
+    };
+
     newCard.user = userObject;
     console.log(newCard);
     fetch('http://localhost:5000/cards', {
@@ -25,7 +38,7 @@ const CardDetails = () => {
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify(newCard),
+      body: JSON.stringify(product),
     })
       .then(res => res.json())
       .then(data => {
@@ -36,7 +49,6 @@ const CardDetails = () => {
           showConfirmButton: true,
         });
         navigate('/myCart');
-        // navigate(`/myCart/${newCard.email}`);
       });
   };
 
@@ -69,7 +81,7 @@ const CardDetails = () => {
           </h3>
 
           <button
-            onClick={handleAddToCard}
+            onClick={() => handleAddToCard(loadCardDetails)}
             className="btn btn-primary w-2/3 mx-auto my-3"
           >
             Add to Cart

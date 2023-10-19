@@ -38,10 +38,9 @@ const Login = () => {
                 showConfirmButton: true,
               });
             }
-            navigate(location.state ? location.state : '/');
           });
 
-        // navigate('/');
+        navigate(location.state ? location.state : '/');
       })
       .catch(error => {
         const errorCode = error.code;
