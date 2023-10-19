@@ -1,23 +1,43 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const CardDetails = () => {
   const loadCardDetails = useLoaderData();
-  console.log(loadCardDetails);
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  // console.log(loadCardDetails);
   const { id } = useParams();
 
   const { _id, brand, name, description, price, rating, image, type } =
     loadCardDetails || {};
-  console.log(loadCardDetails);
+  // console.log(loadCardDetails);
+  const newCard = loadCardDetails || {};
+
   const handleAddToCard = _id => {
+    const { brand, name, description, price, rating, image, type } = newCard;
+    const userObject = { email: user.email };
+    newCard.user = userObject;
+    console.log(newCard);
     fetch('http://localhost:5000/cards', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify(loadCardDetails),
+      body: JSON.stringify(newCard),
     })
       .then(res => res.json())
-      .then(data => console.log(data));
+      .then(data => {
+        console.log(data);
+        Swal.fire({
+          icon: 'success',
+          title: 'Cart added successfully',
+          showConfirmButton: true,
+        });
+        navigate('/myCart');
+        // navigate(`/myCart/${newCard.email}`);
+      });
   };
 
   return (
@@ -47,6 +67,7 @@ const CardDetails = () => {
             <span className="font-semibold">Product Price: </span>
             {price}
           </h3>
+
           <button
             onClick={handleAddToCard}
             className="btn btn-primary w-2/3 mx-auto my-3"

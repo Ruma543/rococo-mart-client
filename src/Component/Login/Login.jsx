@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import GoogleLogin from './GoogleLogin';
+import { Result } from 'postcss';
 
 const Login = () => {
   const { user, loginUser } = useContext(AuthContext);
@@ -15,15 +16,32 @@ const Login = () => {
     const password = form.get('password');
     console.log(email, password);
     loginUser(email, password)
-      .then(userCredential => {
-        const user = userCredential.user;
-        Swal.fire({
-          icon: 'success',
-          title: 'Login successfully',
-          showConfirmButton: true,
-        });
+      .then(result => {
+        console.log(result.user);
+        const user = { email };
+        console.log(user);
+        fetch('http://localhost:5000/cards', {
+          method: 'PATCH',
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify(user),
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data) {
+              e.target.reset();
+              Swal.fire({
+                icon: 'success',
+                title: 'Login successfully',
+                showConfirmButton: true,
+              });
+            }
+            navigate(location.state ? location.state : '/');
+          });
+
         // navigate('/');
-        navigate(location.state ? location.state : '/');
       })
       .catch(error => {
         const errorCode = error.code;
