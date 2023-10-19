@@ -1,4 +1,5 @@
 import { Link, useLoaderData } from 'react-router-dom';
+import logo from '../../../assets/small.png';
 
 const BrandCard = () => {
   const loadedBrands = useLoaderData() || [];
@@ -6,9 +7,24 @@ const BrandCard = () => {
 
   return (
     <div className="w-11/12 mx-auto my-7">
-      <h3 className="text-2xl font-semibold text-center">
-        Our All Available Brand
-      </h3>
+      <div>
+        <img className="w-1/12 mx-auto" src={logo} alt="" />
+        <h3 className="text-2xl  text-center font-serif">
+          <span>W</span>
+          <span>E</span>
+          <span>L</span>
+          <span>C</span>
+          <span>O</span>
+          <span>M</span>
+          <span>E</span>
+        </h3>
+        <h3 className="text-2xl font-semibold text-center font-serif">
+          Our All Available Brand
+        </h3>
+        <h3 className="text-sm text-gray-700 text-center">
+          Quality is remembered long after the price is forgotten.
+        </h3>
+      </div>
       <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-5 space-y-4 ">
         {loadedBrands?.map(brand => (
           <div
