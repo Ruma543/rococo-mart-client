@@ -11,9 +11,9 @@
    registration process first. Details route have their selected brand product
    and they can see the product details or update the product.
 
-4.if the user select details button then see the details information of selected
-product. If user click add button then the product card is save in the my cart
-page.
+4. If the user select details button then see the details information of
+   selected product. If user click add button then the product card is save in
+   the my cart page.
 
 5. If a user wants to empty the cart on the 'My Cart' page, they can do so. On
    this page, users can see only the products they have selected.
