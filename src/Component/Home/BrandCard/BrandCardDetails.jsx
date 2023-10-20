@@ -23,7 +23,7 @@ const BrandCardDetails = () => {
           </p>
         </div>
       ) : (
-        <div>
+        <div className="w-11/12 mx-auto">
           <div className="my-5">
             <Slider {...settings}>
               {loadedBrandCard.map(item => (
@@ -35,7 +35,7 @@ const BrandCardDetails = () => {
                       alt=""
                     />
                   </div>
-                  <div className="absolute lg:top-10 top-5 lg:left-20 left-4 w-11/12 lg:w-1/3 mx-auto lg:text-black text-blue-700">
+                  <div className="absolute lg:top-10 top-5 lg:left-20 left-4 w-11/12 lg:w-1/3 mx-auto  text-blue-700">
                     <h3 className="lg:text-2xl text-xl font-semibold font-serif ">
                       {item.description}
                     </h3>
