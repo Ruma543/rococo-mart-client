@@ -59,15 +59,15 @@ const MyCart = () => {
                 />
                 <div className="flex justify-between items-center my-3">
                   <div>
-                    <h3 className="text-xl font-semibold">
+                    <h3 className="text-xl text-blue-600 font-semibold">
                       Product: {cart.name}
                     </h3>
-                    <h3 className="text-lg font-semibold">
+                    <h3 className="text-lg text-blue-500 font-semibold">
                       Price: $ {cart.price}
                     </h3>
                   </div>
                   <div className="flex items-center flex-col">
-                    <h3 className="">{user?.displayName}</h3>
+                    <h3 className="text-blue-500">{user?.displayName}</h3>
                     <img
                       className="w-14 h-14 rounded-full"
                       src={user?.photoURL}

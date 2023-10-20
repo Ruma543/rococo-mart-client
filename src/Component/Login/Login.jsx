@@ -61,7 +61,7 @@ const Login = () => {
         </h3>
         <form
           onSubmit={handleLogin}
-          className="lg:w-1/3 w-11/12 md:w-3/5 mx-auto bg-pink-200 px-5 py-7 rounded-lg "
+          className="lg:w-1/3 w-11/12 md:w-3/5 mx-auto bg-blue-200 px-5 py-7 rounded-lg "
         >
           <label className="label">
             <span className="text-black font-semibold text-xl">User Email</span>
@@ -86,14 +86,17 @@ const Login = () => {
             required
           />
           <label className="label">
-            <a href=""> Forget Password?</a>
+            <a href="" className="text-blue-700">
+              {' '}
+              Forget Password?
+            </a>
           </label>
-          <button className="btn w-full text-black">Login</button>
+          <button className="btn w-full text-blue-700">Login</button>
         </form>
 
         <p className="py-4 text-center">
           New for Website? Please{' '}
-          <Link className="text-black underline" to="/registration">
+          <Link className=" underline text-blue-700" to="/registration">
             Register
           </Link>
         </p>

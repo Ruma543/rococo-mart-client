@@ -117,7 +117,9 @@ const Registration = () => {
             required
           />
 
-          <button className="py-2 btn w-full my-2">Registration</button>
+          <button className="py-2 btn w-full my-2 text-blue-600">
+            Registration
+          </button>
         </form>
         <p className="py-4 text-center">
           Already have Account? Please{' '}

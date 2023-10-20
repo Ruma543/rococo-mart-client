@@ -21,7 +21,7 @@ const BrandCard = () => {
         <h3 className="text-2xl font-semibold text-center font-serif">
           Our All Available Brand
         </h3>
-        <h3 className="text-sm text-gray-700 text-center">
+        <h3 className="text-sm  text-center text-blue-500">
           Quality is remembered long after the price is forgotten.
         </h3>
       </div>

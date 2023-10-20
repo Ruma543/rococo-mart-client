@@ -39,7 +39,10 @@ const AddProduct = () => {
       <h2 className="text-2xl text-center font-semibold my-3 font-serif">
         Add Your Brand Product
       </h2>
-      <form onSubmit={handleAddProduct} className="bg-orange-100 px-6 py-6">
+      <form
+        onSubmit={handleAddProduct}
+        className="bg-orange-100 px-6 text-blue-600 py-6"
+      >
         {/* first row brand, type */}
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-4">
           <div className="flex flex-col space-y-4">

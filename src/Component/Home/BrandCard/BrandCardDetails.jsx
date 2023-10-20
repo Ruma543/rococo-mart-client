@@ -55,21 +55,31 @@ const BrandCardDetails = () => {
                   <img className="w-full lg:h-56" src={card.image} alt="" />
                 </div>
                 <div className="flex flex-col lg:items-center space-y-3">
-                  <h3 className="text-xl font-semibold">{card.brand}</h3>
-                  <h3>
-                    <span className="font-semibold">Product Name:</span>{' '}
+                  <h3 className="text-xl font-semibold text-blue-600">
+                    {card.brand}
+                  </h3>
+                  <h3 className="text-blue-400">
+                    <span className="font-semibold text-blue-600">
+                      Product Name:
+                    </span>{' '}
                     {card.name}
                   </h3>
-                  <h3>
-                    <span className="font-semibold">Product Type: </span>
+                  <h3 className="text-blue-400">
+                    <span className="font-semibold text-blue-600">
+                      Product Type:{' '}
+                    </span>
                     {card.type}
                   </h3>
-                  <h3>
-                    <span className="font-semibold">Product Price:</span>$
-                    {card.price}
+                  <h3 className="text-blue-400">
+                    <span className="font-semibold text-blue-600">
+                      Product Price:
+                    </span>
+                    ${card.price}
                   </h3>
-                  <h3>
-                    <span className="font-semibold">Product Rating:</span>
+                  <h3 className="text-blue-400">
+                    <span className="font-semibold text-blue-600">
+                      Product Rating:
+                    </span>
                     {card.rating}
                   </h3>
                   <div className="flex justify-center lg:gap-4">
