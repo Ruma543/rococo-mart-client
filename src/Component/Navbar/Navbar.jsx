@@ -99,15 +99,21 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
+          {/* <button id="theme-toggle">Toggle Theme</button> */}
           {user ? (
             <div className="dropdown dropdown-end">
               <div className="flex items-center gap-5">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="lg:w-10 w-7  rounded-full ">
-                    <img src={user.photoURL} />
-                  </div>
-                  <p className="text-xs ">{user.displayName}</p>
-                </label>
+                <div>
+                  <label
+                    tabIndex={0}
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div className="lg:w-10 w-7  rounded-full ">
+                      <img src={user.photoURL} />
+                    </div>
+                  </label>
+                  <p className="text-xs w-full ">{user.displayName}</p>
+                </div>
                 <button
                   onClick={handleLogOut}
                   className="px-4 py-3 bg-red-600 text-white"
@@ -115,19 +121,6 @@ const Navbar = () => {
                   Sign Out
                 </button>
               </div>
-              {/* <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li>
-                  <button
-                    onClick={handleLogOut}
-                    className="px-4 py-3 bg-red-600 text-white"
-                  >
-                    Sign Out
-                  </button>
-                </li>
-              </ul> */}
             </div>
           ) : (
             <Link to="/login">

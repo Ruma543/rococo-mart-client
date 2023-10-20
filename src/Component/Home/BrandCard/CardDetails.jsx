@@ -57,8 +57,8 @@ const CardDetails = () => {
       <h3 className="text-3xl font-semibold text-center my-3 font-serif">
         Details Information of {name}
       </h3>
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 my-5 lg:w-2/3 w-full mx-auto bg-white shadow-lg rounded-lg px-5 py-5">
-        <img className="lg:h-[60vh]" src={image} alt="" />
+      <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-5 my-5 lg:w-2/3 w-full mx-auto bg-white shadow-lg rounded-lg px-5 py-5">
+        <img className="lg:h-[60vh] h-[50vh]" src={image} alt="" />
         <div className="flex flex-col space-y-4 ">
           <h3 className="text-2xl font-semibold"> {brand}</h3>
           <h3>
@@ -76,7 +76,7 @@ const CardDetails = () => {
             {rating}
           </h3>
           <h3>
-            <span className="font-semibold">Product Price: </span>
+            <span className="font-semibold">Product Price: $</span>
             {price}
           </h3>
 

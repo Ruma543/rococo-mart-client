@@ -3,7 +3,7 @@ import logo from '../../../assets/small.png';
 
 const BrandCard = () => {
   const loadedBrands = useLoaderData() || [];
-  console.log(loadedBrands);
+  // console.log(loadedBrands);
 
   return (
     <div className="w-11/12 mx-auto my-7">

@@ -13,7 +13,7 @@ const BrandCardDetails = () => {
     slidesToScroll: 1,
   };
 
-  console.log(loadedBrandCard);
+  // console.log(loadedBrandCard);
   return (
     <div className="w-11/12 mx-auto">
       {loadedBrandCard.length === 0 ? (
@@ -30,13 +30,13 @@ const BrandCardDetails = () => {
                 <div className="grid grid-cols-2 relative" key={item._id}>
                   <div>
                     <img
-                      className="lg:w-2/5 w-full mx-auto lg:h-[70vh]"
+                      className="lg:w-2/5 w-full mx-auto lg:h-[70vh] h-[70vh]"
                       src={item.image}
                       alt=""
                     />
                   </div>
-                  <div className="absolute lg:top-10 top-8 lg:left-20 left-4 w-11/12 lg:w-1/3 mx-auto">
-                    <h3 className="text-2xl font-semibold font-serif ">
+                  <div className="absolute lg:top-10 top-5 lg:left-20 left-4 w-11/12 lg:w-1/3 mx-auto lg:text-black text-blue-700">
+                    <h3 className="lg:text-2xl text-xl font-semibold font-serif ">
                       {item.description}
                     </h3>
                   </div>
