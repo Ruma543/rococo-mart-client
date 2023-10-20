@@ -89,8 +89,8 @@ const Navbar = () => {
             </ul>
           </div>
           <a className=" normal-case text-2xl flex justify-center items-center gap-3">
-            <img className="w-16 h-16  " src={logo} alt="" />
-            <h3>
+            <img className="lg:w-16 lg:h-16 w-10 h-10  " src={logo} alt="" />
+            <h3 className="text-sm lg:text-2xl">
               <span className="text-blue-700">ROCOCO</span> Mart
             </h3>
           </a>
@@ -101,29 +101,39 @@ const Navbar = () => {
         <div className="navbar-end">
           {user ? (
             <div className="dropdown dropdown-end">
-              <div className="flex items-center">
-                <p className=" mr-5">{user.displayName}</p>
-
+              <div className="flex items-center gap-5">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                  <div className="w-10 rounded-full ">
+                  <div className="lg:w-10 w-7  rounded-full ">
                     <img src={user.photoURL} />
                   </div>
+                  <p className="text-xs ">{user.displayName}</p>
                 </label>
+                <button
+                  onClick={handleLogOut}
+                  className="px-4 py-3 bg-red-600 text-white"
+                >
+                  Sign Out
+                </button>
               </div>
-              <ul
+              {/* <ul
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <button onClick={handleLogOut} className="px-4 py-2">
+                  <button
+                    onClick={handleLogOut}
+                    className="px-4 py-3 bg-red-600 text-white"
+                  >
                     Sign Out
                   </button>
                 </li>
-              </ul>
+              </ul> */}
             </div>
           ) : (
             <Link to="/login">
-              <button className="btn mr-5">login</button>
+              <button className="px-4 py-3 bg-blue-600 text-white mr-5">
+                login
+              </button>
             </Link>
           )}
         </div>

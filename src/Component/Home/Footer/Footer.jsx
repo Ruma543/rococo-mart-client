@@ -4,8 +4,8 @@ import { AiOutlineMail } from 'react-icons/ai';
 
 const Footer = () => {
   return (
-    <div className="bg-black w-full lg:py-7 lg:px-10">
-      <div className="grid lg:grid-cols-3 grid-cols-1">
+    <div className="bg-black w-full lg:py-7 p-5  lg:px-10">
+      <div className="grid lg:grid-cols-3 grid-cols-1 space-y-5">
         <div className="flex justify-between">
           <div>
             <div className="flex items-center gap-4">

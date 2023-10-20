@@ -148,7 +148,7 @@ const UpdateProduct = () => {
         {/* button */}
         <div className="flex justify-center my-3">
           <input
-            className="btn btn-primary w-1/5 mx-auto"
+            className="btn btn-primary lg:w-1/5 mx-auto"
             type="submit"
             value="Product Updated"
           />

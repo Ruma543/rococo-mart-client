@@ -7,7 +7,6 @@ import Policy from './Policy/Policy';
 import Review from './Review/Review';
 
 const Home = () => {
-  const { user } = useContext(AuthContext);
   return (
     <div>
       <Banner></Banner>

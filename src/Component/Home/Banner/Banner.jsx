@@ -9,7 +9,7 @@ const Banner = () => {
 
   return (
     <div className="banner w-11/12 mx-auto" style={bannerStyle}>
-      <div className="space-y-3 lg:h-[80vh] flex flex-col justify-center items-center">
+      <div className="space-y-3 lg:h-[80vh] h-full flex flex-col justify-center items-center">
         <h2 className="text-3xl font-semibold font-serif text-center">
           Sale up to 80% off
         </h2>

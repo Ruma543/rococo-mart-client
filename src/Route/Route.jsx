@@ -86,11 +86,6 @@ const Route = createBrowserRouter([
             `https://rococo-mart-server.vercel.app/products/sProduct/${params.id}`
           ),
       },
-      // {
-      //   path: '/',
-      //   element: <Review></Review>,
-      //   loader: () => fetch('review.json'),
-      // },
     ],
   },
 ]);
