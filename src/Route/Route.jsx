@@ -10,6 +10,8 @@ import BrandCardDetails from '../Component/Home/BrandCard/BrandCardDetails';
 import CardDetails from '../Component/Home/BrandCard/CardDetails';
 import UpdateProduct from '../Component/UpdateProduct/UpdateProduct';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import Review from '../Component/Home/Review/Review';
+import BrandCard from '../Component/Home/BrandCard/BrandCard';
 
 const Route = createBrowserRouter([
   {
@@ -84,6 +86,11 @@ const Route = createBrowserRouter([
             `https://rococo-mart-server.vercel.app/products/sProduct/${params.id}`
           ),
       },
+      // {
+      //   path: '/',
+      //   element: <Review></Review>,
+      //   loader: () => fetch('review.json'),
+      // },
     ],
   },
 ]);

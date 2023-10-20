@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "customerName": "John Doe",
+    "image": "https://i.ibb.co/YjK5n6j/engenear.jpg",
+    "customerOpinion": "I had a fantastic experience with the product. It exceeded my expectations in every way. The quality is top-notch, and I would highly recommend it to anyone. As a software engineer, I appreciate well-designed products that make my life easier.",
+    "customerProfession": "Software Engineer"
+  },
+  {
+    "id": 2,
+    "customerName": "Alice Smith",
+    "image": "https://i.ibb.co/nsjfQXH/marketing-manager.jpg",
+    "customerOpinion": "The service provided was outstanding. I highly recommend it to everyone. The attention to detail and the customer support were exceptional. As a marketing manager, I value excellent service, and this company delivered.",
+    "customerProfession": "Marketing Manager"
+  },
+  {
+    "id": 3,
+    "customerName": "David Brown",
+    "image": "https://i.ibb.co/RzvpqRp/teacher.jpg",
+    "customerOpinion": "I'm very satisfied with the quality of the product. It's a great value for the price. The product's durability is impressive, and it has made my teaching job much easier. I would definitely buy it again.",
+    "customerProfession": "Teacher"
+  },
+  {
+    "id": 4,
+    "customerName": "Emily Wilson",
+    "image": "https://i.ibb.co/QdRB76K/nurse.jpg",
+    "customerOpinion": "The product has improved my daily routine. I couldn't be happier with it. It's user-friendly and has a sleek design. As a nurse, I need products I can rely on, and this one has exceeded my expectations.",
+    "customerProfession": "Nurse"
+  }
+]

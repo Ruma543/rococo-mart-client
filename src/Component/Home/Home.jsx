@@ -4,6 +4,7 @@ import Banner from './Banner/Banner';
 import BrandCard from './BrandCard/BrandCard';
 import Footer from './Footer/Footer';
 import Policy from './Policy/Policy';
+import Review from './Review/Review';
 
 const Home = () => {
   const { user } = useContext(AuthContext);
@@ -11,6 +12,7 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <BrandCard></BrandCard>
+      <Review></Review>
       <Policy></Policy>
       <Footer></Footer>
     </div>

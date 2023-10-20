@@ -18,14 +18,16 @@ const BrandCardDetails = () => {
     <div className="w-11/12 mx-auto">
       {loadedBrandCard.length === 0 ? (
         <div className="flex justify-center items-center">
-          <p className="text-2xl font-semibold">no data found</p>
+          <p className="text-2xl font-semibold my-6">
+            No Product are available now.
+          </p>
         </div>
       ) : (
         <div>
           <div className="my-5">
             <Slider {...settings}>
               {loadedBrandCard.map(item => (
-                <div className="grid grid-cols-2" key={item._id}>
+                <div className="grid grid-cols-2 relative" key={item._id}>
                   <div>
                     <img
                       className="w-2/5 mx-auto lg:h-[70vh]"
@@ -33,29 +35,43 @@ const BrandCardDetails = () => {
                       alt=""
                     />
                   </div>
-                  <div>
-                    <h3>{item.description}</h3>
+                  <div className="absolute top-10 left-20">
+                    <h3 className="text-2xl font-semibold font-serif">
+                      {item.description}
+                    </h3>
                   </div>
                 </div>
               ))}
             </Slider>
           </div>
 
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 space-y-5">
+          <div className="grid lg:grid-cols-2 grid-cols-1 my-5 gap-5 space-y-5">
             {loadedBrandCard.map(card => (
               <div
                 key={card._id}
-                className="grid grid-cols-2 items-center bg-white shadow-lg rounded-lg"
+                className="grid grid-cols-2 items-center bg-white shadow-lg rounded-lg px-4 py-5"
               >
                 <div>
                   <img className="w-full h-56" src={card.image} alt="" />
                 </div>
-                <div className="flex flex-col items-center">
-                  <h3>{card.brand}</h3>
-                  <h3>{card.name}</h3>
-                  <h3>{card.type}</h3>
-                  <h3>{card.price}</h3>
-                  <h3>{card.rating}</h3>
+                <div className="flex flex-col items-center space-y-3">
+                  <h3 className="text-xl font-semibold">{card.brand}</h3>
+                  <h3>
+                    <span className="font-semibold">Product Name:</span>{' '}
+                    {card.name}
+                  </h3>
+                  <h3>
+                    <span className="font-semibold">Product Type: </span>
+                    {card.type}
+                  </h3>
+                  <h3>
+                    <span className="font-semibold">Product Price:</span>
+                    {card.price}
+                  </h3>
+                  <h3>
+                    <span className="font-semibold">Product Rating:</span>
+                    {card.rating}
+                  </h3>
                   <div className="flex justify-center gap-4">
                     <Link to={`/updateProduct/${card._id}`}>
                       <button className="btn btn-success">Update</button>
