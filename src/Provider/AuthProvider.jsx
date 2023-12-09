@@ -10,8 +10,8 @@ import {
   updateProfile,
 } from 'firebase/auth';
 
-const googleProvider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
+const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});

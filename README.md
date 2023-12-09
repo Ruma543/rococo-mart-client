@@ -20,4 +20,10 @@
 
 ### Website name:ROCOCO Mart
 
+### Technological Expertise
+
+DaisyUi,Slick-carousel, react-rating.
+
+### server site Github link: https://github.com/Ruma543/rococo-mart-server
+
 ### Client site live Link: https://rococo-mart-client.web.app
